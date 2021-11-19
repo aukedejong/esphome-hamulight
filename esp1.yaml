@@ -1,0 +1,38 @@
+esphome:
+  name: esp1
+  platform: ESP32
+  board: esp32dev
+  includes:
+    - hamulight_remote.h
+    
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "xxxxxxxxxxxxxxxxxxxxxx"
+
+wifi:
+  ssid: "xxxxxx"
+  password: "yyyyyy"
+  domain: ""
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp1 Fallback Hotspot"
+    password: "zzzzzzzzzzz"
+
+captive_portal:
+
+light:
+- platform: custom
+  lambda: |-
+    auto lightOut = new HamulightRemote();
+    App.register_component(lightOut);
+    return { lightOut };
+
+  lights:
+    - name: "Tuinkamerlamp"
+      default_transition_length: 0s
