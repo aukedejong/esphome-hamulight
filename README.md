@@ -20,7 +20,7 @@ Toggle message:
 
 ### Dim message
 
-The remotes usss a circlular touch button to dim the light.
+The remotes uses a circlular touch button to dim the light.
 The dim signal is build up of 5 parts.
 
 > [prefix] [dim data] [glue] [prefix] [dim data]
@@ -37,7 +37,7 @@ Glue part:
 Dim data:
 
 This part of the message can be generated.
-The dim value is a 15 bit number. Every bit in this number is converter, where 1 becomes 0111 and 0 becomes 0100.
+The dim value is a 15 bit number. Every bit in this number is converted, where 1 becomes 0111 and 0 becomes 0100.
 
 > 1 = 0111  
 > 0 = 0100
